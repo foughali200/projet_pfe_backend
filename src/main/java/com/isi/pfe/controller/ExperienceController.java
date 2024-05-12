@@ -5,7 +5,7 @@ import com.isi.pfe.service.interfaces.ExperienceService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/experiences")
 @RestController
 public class ExperienceController {
@@ -27,7 +27,7 @@ public class ExperienceController {
         experienceService.addExperience(experience);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public void updateExperience(@RequestBody Experience experience) {
         experienceService.updateExperience(experience);
     }

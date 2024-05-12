@@ -5,7 +5,7 @@ import com.isi.pfe.service.interfaces.CompetenceService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/competences")
 @RestController
 public class CompetenceController {
@@ -27,7 +27,7 @@ public class CompetenceController {
         competenceService.addCompetence(competence);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public void updateCompetence(@RequestBody Competence competence) {
         competenceService.updateCompetence(competence);
     }

@@ -7,7 +7,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/formations")
 @RestController
 public class FormationController {
@@ -30,7 +30,7 @@ public class FormationController {
     public void addFormation(@RequestBody Formation formation){
         formationService.addFormation(formation);
     }
-    @PutMapping
+    @PutMapping("/{id}")
     public void updateFormation(@RequestBody Formation formation) {
         formationService.updateFormation(formation);
     }

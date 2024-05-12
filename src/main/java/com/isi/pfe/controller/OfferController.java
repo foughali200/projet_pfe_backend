@@ -6,7 +6,7 @@ import com.isi.pfe.service.interfaces.OfferService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/offers")
 @RestController
 public class OfferController {
@@ -30,7 +30,7 @@ public class OfferController {
         offerService.addOffer(offer);
 
     }
-    @PutMapping
+    @PutMapping("/{id}")
     public void updateOffer(@RequestBody Offer offer) {
         offerService.updateOffer(offer);
     }
